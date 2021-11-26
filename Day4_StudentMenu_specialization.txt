@@ -1,0 +1,141 @@
+//STUDENT CLASS
+
+public class Student {
+    private String stdName;
+    private int stdId;
+    private int marks;
+
+
+    public Student(String stdName, int stdId, int marks) {
+        this.stdName = stdName;
+        this.stdId = stdId;
+        this.marks = marks;
+    }
+
+    public String getStdName() {
+        return stdName;
+    }
+
+    public void setStdName(String stdName) {
+        this.stdName = stdName;
+    }
+
+    public int getStdId() {
+        return stdId;
+    }
+
+    public void setStdId(int stdId) {
+        this.stdId = stdId;
+    }
+
+
+    public int getMarks() {
+        return marks;
+    }
+
+    public void setMarks(int marks) {
+        this.marks = marks;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "stdName='" + stdName + '\'' +
+                ", stdId=" + stdId +
+                ", marks=" + marks +
+                '}';
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+//STUDENTMENU CLASS
+
+import java.util.*;
+
+public class StudentMenu {
+    static Scanner ip = new Scanner(System.in);
+    static List<Student> stdList = new ArrayList<Student>();
+    public static void main(String[] args) {
+        int choice = 0;
+        do {
+            System.out.println("PLEASE ENTER YOUR CHOICE");
+            System.out.println("1.Create\n 2.Search\n 3.Update\n 4.Delete\n 5.Display\n 6.Exit\n");
+            choice = ip.nextInt();
+            switch (choice) {
+                case 1:
+                    createStudentData();
+                    break;
+                case 2:
+                    int id;
+                    System.out.println("Enter the id you want to search");
+                    id = ip.nextInt();
+                    searchStudentData(id);
+                    break;
+                case 3:
+                    updateStudentData();
+                    break;
+                case 4:
+                    System.out.println("Enter the id you want to delete");
+                    id = ip.nextInt();
+                    removeStudentData(id);
+                    break;
+                case 5:
+                    System.out.println(stdList);
+                    break;
+                case 6:
+                    System.exit(0);
+                    break;
+
+            }
+        }while(choice != -1);
+        System.out.println("Program ends");
+    }
+
+    private static void createStudentData() {
+        System.out.println("Enter Student's Name");
+        String name = ip.next();
+
+        System.out.println("Enter Student's ID");
+        int id = ip.nextInt();
+
+        System.out.println("Enter Student's Marks");
+        int marks = ip.nextInt();
+
+        Student newStd = new Student(name,id,marks);
+
+        stdList.add(newStd);
+    }
+    private static void searchStudentData(int id) {
+        for (int i = 0; i < stdList.size(); i++) {
+            Student stud = stdList.get(i);
+            if(stud.getStdId()==id)
+                System.out.println(stud);
+        }
+    }
+    private static void updateStudentData() {
+        int id;
+        String name;
+        int marks;
+        System.out.println("Enter the id you want to update");
+        id = ip.nextInt();
+        System.out.println("Enter Student's name");
+        name = ip.next();
+        System.out.println("Enter Student's marks");
+        marks = ip.nextInt();
+        for(int i = 0;i<stdList.size();i++){
+            Student s = stdList.get(i);
+            if(s.getStdId()==id){
+                s.setStdName(name);
+                s.setMarks(marks);
+            }
+        }
+    }
+    private static void removeStudentData(int id) {
+        for(int i = 0; i < stdList.size();i++){
+            Student stud = stdList.get(i);
+            if(stud.getStdId()==id)
+                stdList.remove(stud);
+            System.out.print("Student record was removed");
+        }
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
