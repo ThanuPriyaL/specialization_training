@@ -1,0 +1,532 @@
+//Swapping of two numbers
+public class SwapNos {
+ 
+    public static void main(String[] args) {
+ 
+        
+        int a=10,b=20,t;
+
+        System.out.println("Before Swapping a="+a+"..b="+b);
+
+        //a = a + b;
+        //b = a - b;
+        //a = a- b;
+
+
+
+        b = a * b;
+        a= b/a;// a *b/a=b
+        b= b/a;// a*b/b
+
+        // 90/0
+
+
+        System.out.println("After Swapping a="+a+"..b="+b);
+
+    }
+ 
+}
+------------------------------------------------------------------------------------------------------------------------------------
+//Comparing two numbers
+public class SwapNos {
+ 
+    public static void main(String[] args) {
+
+        int a=10,b=5,c=45,small=0,big=0;
+
+        if(a>b) {
+            big = a;
+            small = b;
+        }
+        else {
+            big= b;
+            small = a;
+        }
+
+        if(c > big) big = c;
+        if(c < small) small = c;
+
+
+        System.out.println("Small...."+small);
+        System.out.println("Big...."+big);
+
+
+    }
+ 
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+//infinite loop
+public class SwapNos {
+ 
+    public static void main(String[] args) {
+        int i=1;
+
+        while(true) {
+            System.out.print(i+" ");
+            if(i == 10) break;
+            i=i+1;//2 3 4 5....9
+
+        }
+        System.out.println("\n Program Ends");
+	}
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
+//prime num
+public class Main
+{
+public static void main(String[] args)
+{
+int count=0;
+for(int i=20;(i<=50 && count<5);i++) {
+if( isPrime(i) == true)
+{
+count++;
+System.out.println(i+ " ");
+}
+}
+}
+static boolean isPrime(int n){
+boolean res = false;
+int i;
+for(i=2;(i<=n/2) && (n % i != 0);i++);
+if(i>n/2) {
+res = true;
+}
+return res;
+}
+}
+---------------------------------------------------------------------------------------------------------------------------------
+//Biggest num
+import java.util.Scanner;
+ 
+public class Demo2 {
+ 
+    public static void main(String[] args) {
+        int big=0,r;
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter number");
+    int n = scanner.nextInt();
+
+        while(n != 0) {
+            r = n % 10;
+            if(r > big) {
+                big = r;
+                if(big == 9) break;
+            }
+            n = n/10;// 839206 83920  8392 839 83 8 0
+        }
+        System.out.println(big+"....n value..."+n);
+
+
+    }
+ 
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+//Smallest num
+import java.util.Scanner;
+ 
+public class Demo2 {
+ 
+    public static void main(String[] args) {
+        int small=9,q;
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Enter number");
+    int n = scanner.nextInt();
+
+    // 789 / 100 == 7
+    // 89 /10==8
+    // 9/1 = 9
+
+    // 85439 / 10000 = 8 
+    // 5439 / 1000 = 5
+    // 439 / 100 = 4
+    // 39 / 10 = 3
+    // 9 / 1= 9
+    // 0
+    int d=1;
+
+    if(n < 10) d = 1;
+    else if(n >= 10 && n <100) d =10;
+    else if( n >= 100 && n<1000) d= 100;
+    else if( n >= 1000 && n<10000) d= 1000;
+    else if( n >= 10000 && n<100000) d= 10000;
+    //
+
+    while(n!= 0) {
+        q = n / d;// 85439 / 10000=== 8
+        //n =   n - (q * d);// 85439 - 80000 == 5439
+         n = n % d; // 85439 % 10000 ====5439
+        if(q < small) small = q;
+        d = d/10;
+    }
+    System.out.println(small);
+
+    }
+ 
+}
+---------------------------------------------------------------------------------------------------------------------------------------------
+1.A company decided to give bonus of 5% to employee if his/her year of service is more than 5 years.
+Ask user for their salary and year of service and print the net bonus amount.
+import java.util.Scanner;
+
+public class Main
+
+{
+
+public static void main(String args[])
+
+{
+
+double bonus;
+
+Scanner ip = new Scanner(System.in);
+
+double a; double b;
+
+System.out.println("monthly salary");
+
+a=ip.nextInt();
+
+System.out.println("serving years");
+
+b=ip.nextInt();
+
+bonus=((5*a)/100);
+
+if (b>5||b==5){
+
+System.out.println("your bonus:"+ bonus);
+
+}
+
+else{
+
+System.out.println("bonus denied");
+
+}
+}
+}
+---------------------------------------------------------------------------------------
+2.A school has following rules for grading system:
+a. Below 25 - F
+b. 25 to 45 - E
+c. 45 to 50 - D
+d. 50 to 60 - C
+e. 60 to 80 - B
+f. Above 80 - A
+Ask user to enter marks and print the corresponding grade.
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String args[])
+
+{
+    
+    System.out.println("Enter Marks of any Subject");
+    int m;
+    Scanner ip = new Scanner(System.in);
+
+        System.out.println("The student Grade is:");
+        if(m>=80)
+        {
+            System.out.print("A");
+        }
+        else if(m>=60 && m<80)
+        {
+           System.out.print("B");
+        } 
+        else if(m>=50 && m<60)
+        {
+            System.out.print("C");
+        }
+        else if(m>=45 && m<50)
+        {
+            System.out.print("D");
+        }
+        else
+        {
+            System.out.print("F");
+        }
+}
+}
+---------------------------------------------------------------------------------------
+3.Take input of age of 3 people by user and determine oldest and youngest among them.
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+
+Scanner ip=new Scanner(System.in);
+System.out.println("enter the age of three person");
+int p1=ip.nextInt();
+int p2=ip.nextInt();
+int p3=ip.nextInt();
+int old,young;
+if(p1>p2) {
+old = p1;
+young = p2;
+}
+else {
+old= p2;
+young = p1;
+}
+if(p3 > old) old = p3;
+if(p3 < young) young = p3;
+System.out.println("young...."+yonger);
+System.out.println("old...."+older);
+}
+}
+
+-----------------------------------------------------------------------------------------
+4.Write a program to print absolute vlaue of a number entered by user. E.g.-
+INPUT: 1        OUTPUT: 1
+INPUT: -1        OUTPUT: 1
+
+import java.util.Scanner;
+public class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter number");
+int x = sc.nextInt();
+if(x<0){
+System.out.println("Absolute value = " +(-1*x));
+}
+else{
+System.out.println("Absolute value = " +x);
+
+}
+}
+}
+--------------------------------------------------------------------------------------
+5.A student will not be allowed to sit in exam if his/her attendence is less than 75%.
+Take following input from user
+Number of classes held
+Number of classes attended.
+And print
+percentage of class attended
+Is student is allowed to sit in exam or not.
+
+public class Main {
+   public static void main(String args[]){
+      float tc;
+      float ca;
+      
+      System.out.println("Enter Total classes helD::");
+      Scanner ip = new Scanner(System.in);
+
+      System.out.println("Enter total class atteneded ::");
+      ca = ip.nextFloat();
+
+      percentage = (float)((ca / tc) * 100);
+      System.out.println("Percentage ::"+ percentage);
+      if(percentage>=75){
+	System.out.println("Eligible for exam");
+	}
+	else{
+	System.out.println(" not Eligible for exam");
+	}
+   }
+}
+---------------------------------------------------------------------------------------
+6.sum of all 100 nnum
+public class main {
+public static void main(String[] args){
+int sum=0;
+for(int i=0; i<=100; i=i+2){
+sum = sum + i;
+}
+System.out.println(sum);
+}
+--------------------------------------------------------------------------------------------
+7. sum of odd nums
+public class Main
+{
+	public static void main(String args[]) 
+	{
+		int sum = 0;
+		for (int i = 1; i <= 100; i++) 
+		{
+			if (i % 2 != 0) 
+			{
+				sum = sum + i;
+			}
+		}
+		System.out.println("The Sum Of 100 Odd Numbers are:" + sum);
+	}
+}
+---------------------------------------------------------------------------------------
+8. sum of even num upto 100
+
+    public static void main(String[] args) {
+
+        int num = 100, sum = 0;
+
+        for(int i = 1; i <= num; ++i)
+        {
+            sum += i;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+----------------------------------------------------------------
+9. sum of all num which are divisible by 3 and 5
+public class Main
+{
+public static void main(String[] args) {
+int i = 1,sum=0;
+while(i<=100){
+if(i%3==0 && i%5==0){
+sum = sum+i;
+}
+i++;
+}
+System.out.println("The sum is "+sum );
+}
+--------------------------------------------------------------------------------------------------------
+Q1.Write a Java program that reads in two floating-point numbers and tests whether they are the same up to three decimal places. Test Data
+
+Input floating-point number: 25.586
+
+Input floating-point another number: 25.589
+
+Expected Output :
+
+They are different
+//sol
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	
+Scanner ip = new Scanner(System.in);
+System.out.println("Enter first floating-point number");
+double x= ip.nextDouble();
+System.out.println("Enter Second floating-point number");
+double y= ip.nextDouble();
+x= Math.round(x *1000);
+x= x/1000;
+y= Math.round(y *1000);
+y= y/1000;
+if(x==y)
+{
+    System.out.print("Same up to three decimal");
+}
+else{
+    System.out.print("different");
+}
+}
+}
+------------------------------------------------------------------------------------------------------------------------------------
+Q2.Write a Java program that accepts three numbers and prints "All numbers are equal" if all three numbers are equal,
+
+ "All numbers are different" if all three numbers are different and "Neither all are equal or different" otherwise. Test Data
+
+Input first number: 2564
+
+Input second number: 3526
+
+Input third number: 2456
+
+Expected Output : All numbers are different
+
+//sol
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	
+
+Scanner ip = new Scanner(System.in);
+System.out.println("first  number");
+int x= ip.nextInt();
+System.out.println("Second  number");
+int y= ip.nextInt();
+System.out.println("Third  number");
+int z= ip.nextInt();
+if(x==y && x==z)
+{
+    System.out.print("all are equal");
+    }
+    else if((x== y) || (x== z) || (z== y)){
+    System.out.print("Neither all are equal or different");
+    }
+    else{
+        System.out.print("All number are different");
+    }
+
+
+
+}
+}
+
+------------------------------------------------------------------------------------------------------------------------------------
+Q3.Write a program that accepts three numbers from the user and prints "increasing" if the numbers are in increasing order, 
+
+"decreasing" if the numbers are in decreasing order, and "Neither increasing or decreasing order" otherwise.  Test Data
+
+Input first number: 1524
+
+Input second number: 2345
+
+Input third number: 3321
+
+Expected Output : Increasing order
+
+//sol
+import java.util.Scanner;
+public class Main
+{
+public static void main(String[] args) {
+Scanner ip=new Scanner(System.in);
+System.out.println("Enter 1st number :");
+int n1=ip.nextInt();
+System.out.println("Enter 2nd number :");
+int n2=ip.nextInt();
+System.out.println("Enter 3rd number :");
+int n3=ip.nextInt();
+if(n1>n2 && n2>n3){
+System.out.println("Decreasing order");
+}
+else if(n3>n2 && n2>n1){
+System.out.println("Increasing order");
+}
+else{
+System.out.println("Neither increasing or decreasing order");
+}
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+Q4.Write a Java program that accepts two floating­point numbers and checks whether they are the same up to two decimal places. Test Data
+
+Input first floating­point number: 1235
+
+Input second floating­point number: 2534
+
+Expected Output : These numbers are different.
+
+//sol
+import java.util.Scanner;
+public class Demo {
+
+
+public static void main(String[] args) {
+Scanner ip = new Scanner(System.in);
+System.out.print("Enter first floating point number: ");
+double num1 = ip.nextDouble();
+System.out.print("Enter second floating point number: ");
+double num2 = ip.nextDouble();
+input.close();
+
+if (Math.abs(num1 - num2) <= 0.01) {
+System.out.println("These numbers are the same.");
+}
+else {
+System.out.println("These numbers are different.");
+}
+}
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
