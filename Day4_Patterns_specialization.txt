@@ -1,4 +1,4 @@
-1>
+
     * 
 
    * * 
@@ -9,7 +9,7 @@
 
 * * * * * 
 
-public class p1 {
+public class P1 {
     public static void main(String args[])
     {
         int i, j, row = 6;
@@ -38,7 +38,7 @@ public class p1 {
 * * * *
 
 * * * * * 
-public class p2 {
+public class P2 {
         public static void main(String args[]) {
             int i, j, row = 6;
             for (i = 0; i < row; i++) {
@@ -63,7 +63,7 @@ public class p2 {
    * * * * *
 
 
-public class p3 {
+public class P3 {
     public static void main(String args[])
     {
         int i, j, row = 6;
@@ -102,13 +102,13 @@ public class p3 {
 
 import java.util.Scanner;
 
-public class p4 {
+public class P4 {
     public static void main(String args[])
     {
         int row, i, j, space = 1;
         System.out.print("Enter the number of rows you want to print: ");
-        Scanner sc = new Scanner(System.in);
-        row = sc.nextInt();
+        Scanner ip = new Scanner(System.in);
+        row = ip.nextInt();
         space = row - 1;
         for (j = 1; j<= row; j++)
         {
@@ -153,7 +153,7 @@ public class p4 {
 * 
 
 
-public class p5 {
+public class P5 {
     public static void main(String[] args) {
         int rows = 5;
         for (int i = rows - 1; i >= 0; i--) {
@@ -180,7 +180,7 @@ public class p5 {
 ****** 
 package com.patterns;
 
-public class pattern6 {
+public class P6 {
     public static void main(String args[])
     {
         int i, j, row = 6;
@@ -210,9 +210,8 @@ public class pattern6 {
     * * 
 
      * 
-package com.patterns;
 
-public class pattern7 {
+public class P7 {
     public static void main(String[] args)
     {
         int rows=8;
@@ -243,10 +242,7 @@ public class pattern7 {
 
     *
 
-
-package com.patterns;
-
-public class pattern8 {
+public class P8 {
     public static void main(String[] args)
     {
         int rows=8;
@@ -285,18 +281,16 @@ public class pattern8 {
 
 *  
 
-package com.patterns;
-
 import java.util.Scanner;
 
-public class p9
+public class P9
     {
         public static void main(String[] args)
         {
             int i, j, rows;
-            Scanner sc = new Scanner(System.in);
+            Scanner ip = new Scanner(System.in);
             System.out.print("Enter the number of rows you want to print: ");
-            rows = sc.nextInt();
+            rows = ip.nextInt();
             for (i= 0; i<= rows-1; i++)
             {
                 for (j=0; j<=i; j++)
@@ -395,7 +389,7 @@ public class P10 {
 
 import java.util.Scanner;
 
-public class p11 {
+public class P11 {
     public static void main(String[] args)
     {
         int i, j, k, n;
@@ -426,7 +420,6 @@ public class p11 {
             }
             System.out.println("");
         }
-        sc.close();
     }
 }
 -------------------------------------------------------------------------------------------------------------------------------
@@ -441,7 +434,7 @@ public class p11 {
 ********* 
 
 
-public class p12 {
+public class P12 {
     public static void main(String[] args)
     {
         int i, j, k, rows=9;
@@ -626,9 +619,9 @@ public class P17 {
         public static void main(String[] args)
         {
             int i, j, rows;
-            Scanner sc = new Scanner(System.in);
+            Scanner ip = new Scanner(System.in);
             System.out.print("Enter the number of rows you want to print: ");
-            rows = sc.nextInt();
+            rows = ip.nextInt();
             for (i = 1; i <= rows; i++)
             {
                 for (j = 1; j <= i; j++)
@@ -658,9 +651,9 @@ public class P18 {
     public static void main(String[] args)
     {
         int i, j, rows;
-        Scanner sc = new Scanner(System.in);
+        Scanner ip = new Scanner(System.in);
         System.out.print("Enter the number of rows youy want to print: ");
-        rows = sc.nextInt();
+        rows = ip.nextInt();
         for (i = rows; i >= 1; i--)
         {
             for (j = rows; j >= i; j--)
@@ -692,9 +685,9 @@ public class P19 {
     public static void main(String[] args)
     {
         int i, j, n;
-        Scanner sc = new Scanner(System.in);
+        Scanner ip = new Scanner(System.in);
         System.out.print("Enter the number of rows you want to print: ");
-        n = sc.nextInt();
+        n = ip.nextInt();
         for (i = 1; i <= n; i++)
         {
             for (j = i; j >= 1; j--)
