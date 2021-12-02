@@ -1,0 +1,114 @@
+//Main
+import java.util.HashMap;
+import java.util.Map;
+public class HashMap1 {
+    public static void main(String args[])
+    {
+//Teacher teacher=new Teacher();
+// Subject subject=new Subject();
+
+        Map<Subject, Teacher> classmap=new HashMap<>();
+        classmap.put(new Subject(2,"Science"),new Teacher("Kavitha",102));
+        classmap.put(new Subject(3,"Maths"),new Teacher("Manu",103));
+        System.out.println(classmap);
+    }
+}
+-----------------------------------------------------------------------------------
+//Subject
+
+public class Subject {
+    int id;
+    String subjectname;
+
+
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", subjectname='" + subjectname + '\'' +
+                '}';
+    }
+    public Subject()
+    {
+
+    }
+
+    public Subject(int id, String subjectname) {
+        this.id = id;
+        this.subjectname = subjectname;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+
+    public String getSubjectname() {
+        return subjectname;
+    }
+
+
+
+    public void setSubjectname(String subjectname) {
+        this.subjectname = subjectname;
+    }
+}
+----------------------------------------------------------------------
+//Teacher
+public class Teacher {
+    String name;
+    int id;
+
+
+
+
+    public Teacher()
+    {
+
+    }
+    public Teacher(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+
+    public int getId() {
+        return id;
+    }
+
+
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
+}
+---------------------------------------------------------------------
