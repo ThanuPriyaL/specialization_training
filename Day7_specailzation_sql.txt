@@ -1,0 +1,28 @@
+Create database emp;
+
+show databases;
+
+
+create table emp(empid int primary key,
+		 firstname varchar(20),
+		 lastame varchar(10),
+		 age int,
+		 designation varchar(10)
+		);
+
+insert into emp  values( 1,"thanu","priya",22,"Ase");
+insert into emp  values( 2,"Harry","Potter",22,"Ase");
+insert into emp  values( 3,"Hermoine","Granger",22,"Manager");
+insert into emp  values( 1,"Ron","Weasely",22,"SE");
+
+update emp set firstname="Thanu" where id=1;
+update emp set lastname="Priya" where id=1;
+
+alter table tablename add coloumn salary int;
+
+update emp set salary=30000 where id=1;
+update emp set salary=30000 where id=2;
+update emp set salary=60000 where id=3;
+update emp set salary=40000 where id=4;
+
+select CONCAT(firstname,' ',lastname) as fullname , (10/100)*salary as HRA,(5/100)*salary as DA,(7/100)*salary as PF),salary as basic_salary,(bacic_salary+HRA+DA+PF)as Gross_salary from emp;
