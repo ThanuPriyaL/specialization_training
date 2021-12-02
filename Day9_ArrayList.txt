@@ -1,0 +1,186 @@
+//Main
+public class Main {
+    int id;
+    String product_name;
+    int qty;
+    int price;
+
+    public Main(int id, String product_name, int qty, int price) {
+        this.id = id;
+        this.product_name = product_name;
+        this.qty = qty;
+        this.price = price;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", product_name='" + product_name + '\'' +
+                ", qty=" + qty +
+                ", price=" + price +
+                '}';
+    }
+}
+-------------------------------------------------------------------------------------------------------------
+//Menu
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Menu {
+    static List<Main> prd = new ArrayList<>();
+    public static void main(String[] args) {
+
+        prd.add(new Main(1,"Scale",20,10));
+        prd.add(new Main(2,"Sharpner",30,5));
+        prd.add(new Main(3,"Pencil",50,5));
+        prd.add(new Main(2,"Eraser",30,5));
+        prd.add(new Main(4,"Pen",30,10));
+        prd.add(new Main(2,"Ink-Eraser",30,5));
+        prd.add(new Main(5,"Penpencil",10,30));
+        prd.add(new Main(2,"Whitner",30,30));
+        int ch;
+        do{
+            System.out.println("Product List");
+
+            System.out.println("Menu");
+            System.out.println("1.Create ");
+            System.out.println("2.search");
+            System.out.println("3.update");
+            System.out.println("4.Delete");
+            System.out.println("5.Display");
+            System.out.println("6.Exit");
+            Scanner ip = new Scanner(System.in);
+            ch = ip.nextInt();
+            switch (ch) {
+                case 1:
+                    createProduct();
+                    break;
+                case 2:
+                    int id;
+                    System.out.println("Enter the id you want to search");
+                    id = ip.nextInt();
+                    searchProduct(id);
+                    break;
+                case 3:
+                    updateProduct();
+                    System.out.println("Updated successfully...");
+                    break;
+                case 4:
+                    System.out.println("Enter the id you want to delete");
+                    id = ip.nextInt();
+                    removeProduct(id);
+                    System.out.println("Product removed successfully...");
+                    break;
+                case 5:
+                    System.out.println(prd);
+                    break;
+                case 6:
+                    System.out.println("Program ends....");
+                    System.exit(0);
+                    break;
+
+
+
+            }
+        }while(ch != -1);
+        System.out.println("Program ends");
+    }
+
+
+
+    private static void createProduct() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter product id");
+        int prodId = sc.nextInt();
+        
+        System.out.println("Enter product name");
+        String prodName = sc.next();
+
+        System.out.println("Enter the quantity");
+        int qty = sc.nextInt();
+        
+        System.out.println("Enter the price");
+        int price = sc.nextInt();
+        
+        Main newProd = new Main(prodId,prodName,qty,price);
+        
+        prd.add(newProd);
+    }
+
+
+
+    private static void searchProduct(int id) {
+        for (int index = 0; index <prd.size(); index++) {
+            Main prod = prd.get(index);
+            if (prod.getId() == id)
+                System.out.println(prod);
+        }
+    }
+
+    private static void updateProduct() {
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter product's id");
+        int prodId = sc.nextInt();
+
+        System.out.println("Enter product's name");
+        String prodName = sc.next();
+
+        System.out.println("Enter the  product's  quantity");
+        int qty = sc.nextInt();
+        System.out.println("Enter the product's price");
+        int price = sc.nextInt();
+        for(int i = 0;i<prd.size();i++){
+            Main p = prd.get(i);
+            if(p.getId()==prodId){
+                p.setProduct_name(prodName);
+                p.setQty(qty);
+                p.setPrice(price);
+            }
+        }
+    }
+    private static void removeProduct(int id ){
+        for(int i = 0; i < prd.size();i++){
+            Main prod = prd.get(i);
+            if(prod.getId()==id){
+                prd.remove(prod);
+                System.out.println("Product was removed");
+            }
+        }
+
+    }
+}
+-----------------------------------------------------------------
