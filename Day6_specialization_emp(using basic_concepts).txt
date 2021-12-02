@@ -1,0 +1,118 @@
+import  java.util.Scanner;
+import java.util.stream.Stream;
+
+abstract class Emp {
+        String name, designation;
+        int age, salary;
+        Scanner ip = new Scanner(System.in);
+
+     public Emp() {
+         System.out.println("Enter your name");
+         name=ip.next();
+         System.out.println("Enter age");
+         age=ip.nextInt();
+    }
+    public void display(){
+        System.out.println("Name"+" "+name);
+        System.out.println("Age"+" "+age);
+        System.out.println("Salary"+" "+salary);
+        System.out.println("Designation"+" "+designation);
+    }
+     public abstract void raise();
+    }
+     final class Clerk extends Emp{
+        public Clerk(){
+            salary=10000;
+            designation="Clerk";
+        }
+        public void raise(){
+            salary+=1000;
+        }
+    }
+    final class Programer extends Emp{
+        public Programer(){
+            salary=30000;
+            designation="Programer";
+        }
+        public void raise(){
+            salary+=5000;
+        }
+    }
+    final class Manager extends Emp{
+        public Manager(){
+            salary=50000;
+            designation="Manager";
+        }
+        public void raise(){
+            salary+=10000;
+        }
+    }
+    public class Employee{
+        public static void main(String[] args) {
+            Scanner ip1=new Scanner(System.in);
+            Emp[] e=new Emp[10];
+            int ch=0,c2=0,i=0;
+            do{
+                System.out.println("1.Create");
+                System.out.println("2.Display");
+                System.out.println("3.Raise_Salary");
+                System.out.println("4.Exit");
+                System.out.println("Enter your Choice");
+                ch=ip1.nextInt();
+                switch (ch){
+                    case 1: do{
+                        System.out.println("\n1.Clerk");
+                        System.out.println("2.Programer");
+                        System.out.println("3.Manager");
+                        System.out.println("4.Exit");
+                        System.out.println("Enter your Choice");
+                        c2=ip1.nextInt();
+                        switch (c2){
+                            case 1:e[i]=new Clerk();
+                                i++;
+                                break;
+                            case 2:e[i]=new Programer();
+                                i++;
+                                break;
+                            case 3:e[i]=new Manager();
+                                i++;
+                                break;
+                        }
+                    }while (c2!=4);
+                    break;
+                    case 2:try {
+                        for (Emp x : e) {
+                            if (x != null) {
+                                x.display();
+                            }
+                        }
+                    }
+                        catch(Exception ex){
+                            System.out.println("\n No Records Found");
+                        }
+                        break;
+                    case 3: try{
+                        for (Emp x:e) {
+                            if (x != null) {
+                                x.raise();
+                            }
+                            System.out.println("\n Salaray Raised");
+                        }
+                        } catch(Exception ex){
+                            System.out.println("\n No Records Found");
+                        }
+                        break;
+                    case 4:
+                        System.out.println("\n Exixting");
+                        break;
+                    default:
+                        System.out.println("\n Invalid Choice!");
+                    }
+                }while (ch!=4);
+//            Stream<String> Emp=Stream.of(Emp[]);
+//            Emp.filter(s->s.contains("C"))
+//                    .map(String::toUpperCase)
+//                    .sorted()
+//                    .forEach(System.out::println);
+            }
+        }
