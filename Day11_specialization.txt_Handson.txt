@@ -108,5 +108,5 @@ taken from 2 banks.
 Problem # 7:
 Write a query to display all those account number, deposit, withdrawalwhere withdrawal is more than deposit amount.
 
-->
+->select distinct t.acnumber,d.tr_am as deposit,w.tr_am as withdrawal from trandetails t,(select acnumber,sum(transaction_amount) as tr_am from trandetails where transaction_type="withdrawal" group by acnumber)w,(select acnumber,sum(transaction_amount) as tr_am from trandetails where  transaction_type="deposit" group by acnumber)d where w.tr_am>d.tr_am and w.acnumber=t.acnumber and t.acnumber=d.acnumber;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
