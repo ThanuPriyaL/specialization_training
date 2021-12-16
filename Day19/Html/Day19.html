@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        obj=new Object()
+        obj.name="thanu"
+        obj.age=20;
+
+        obj=new Object()
+        obj.name="priya"
+        obj.age=22;
+    </script>
+    <script>
+        function Emp(name,age,salary){
+            this.name=name;
+            this.age=age;
+            this.salary=salary;
+        }
+    </script>
+    <script>
+        var e1={'name':'thanu','age':'22','salary':'10000'}
+        var e2={'name':'priya','age':'22','salary':'10000'}
+    </script>
+</head>
+<body>
+    <h2>
+        First type of onject Creation
+    </h2>
+    <script>
+        document.write('<h2>By using object Constructor</h2>')
+        document.write('Name:-'+obj.name);
+        document.write('<br> Age:-'+obj.age);
+        document.write('<br>Name:-'+obj1.name);
+        document.write('<br>Age:-'+obj1.age);
+    </script>
+
+<h2>
+    Second type of object Creation
+</h2>
+<script>
+    var emp=new Emp('Harry',22,12000);
+    var emp1=new Emp('Ron',22,12000);
+    var emp2=new Emp('Hermoine',22,12000);
+    var emp3=new Emp('Ginny',22,12000);
+    document.write('<h2>By using function Constructor</h2>')
+    document.write('Name:-'+emp.name);
+    document.write('<br> Age:-'+emp.age);
+    document.write('<br> Salary:-'+emp.salary);
+    document.write('<br><br><br>Name:-'+emp1.name);
+    document.write('<br>Age:-'+emp1.age);
+    document.write('<br> Salary:-'+emp1.salary);
+</script>
+
+<h2>
+    Third type of object Creation
+</h2>
+<script>
+    document.write('<h2>By using Json Constructor</h2>')
+    document.write('Name:-'+e1.name);
+    document.write('<br> Age:-'+e1.age);
+    document.write('<br> Salary:-'+e1.salary);
+    document.write('<br><br><br>Name:-'+e2.name);
+    document.write('<br>Age:-'+e2.age);
+    document.write('<br> Salary:-'+e2.salary);
+</script>
+</body>
+</html>
