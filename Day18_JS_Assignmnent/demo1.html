@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script>
+function abc()
+{
+window.document.getElementById('s1').innerText='hello'
+}
+function calculate(id)
+{
+
+var a =parseInt(document.f1.n1.value);
+var b=parseInt(document.f1.n2.value);
+switch(id)
+{
+case add:
+document.getElementById("s2").innerText=a+b;
+break;
+case sub:
+document.getElementById("s2").innerText = a - b;
+break;
+case mul:
+document.getElementById("s2").innerText = a * b;
+break;
+case div:
+document.getElementById("s2").innerText = a / b;
+break;
+}
+
+
+
+}
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<h1>
+inner html and inner text
+</h1>
+<hr>
+<span id="s1">Hello Everyone</span>
+<button onclick=" abc()">change</button>
+<hr>
+<form name="f1">
+enter value1:<input type="number" name="n1" #v1><br>
+enter value2:<input type="number" name="n2" #v2><br>
+<input type="button" id="add" value="add" onclick="calculate(add)"></input>
+<input type="button" id="sub" value="sub" onclick="calculate(sub)"></input>
+<input type="button" id="mul" value="mul" onclick="calculate(mul)"></input>
+<input type="button" id="div" value="div" onclick="calculate(div)"></input>
+<h3>
+result::<span id=s2></span>
+</h3>
+</form>
+</body>
+
+
+
+</head>
+</html>

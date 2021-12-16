@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Add(){
+            var a=parseInt(document.f1.n1.value);
+            var b=parseInt(document.f1.n2.value);
+                document.getElementById("s2").innerText=a+b;
+
+        }
+        function Sub(){
+            var a=parseInt(document.f1.n1.value);
+            var b=parseInt(document.f1.n2.value);
+                document.getElementById("s2").innerText=a-b;
+        }
+        function Mul(){
+            var a=parseInt(document.f1.n1.value);
+            var b=parseInt(document.f1.n2.value);
+                document.getElementById("s2").innerText=a*b;
+        }
+        function Div(){
+            var a=parseInt(document.f1.n1.value);
+            var b=parseInt(document.f1.n2.value);
+                document.getElementById("s2").innerText=a/b;
+            }
+            
+    </script>
+</head>
+<body>
+    <!-- <h1>
+        inner html inner text
+    </h1>
+    <span id="s1">Hello</span>
+    <button onclick="abc()">change</button>
+    <hr> -->
+    <form name="f1">
+        enter num:<input type="number" name="n1" #v1><br>
+        enter num:<input type="number" name="n2" #v2><br>
+        <input type="button" value="Sum" id="fun" onclick="Add()" >
+        <input type="button" value="Sub" id="fun" onclick="Sub()" >
+        <input type="button" value="Product" id="fun" onclick="Mul()" >
+        <input type="button" value="Divide" id="fun" onclick="Div()" >
+    </form>
+    <h3> Result ::
+        <span  id="s2">
+        </span>
+    </h3>
+</body>
+</html>
